@@ -9,28 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
- 
-    var body: some View {
-        TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("First")
-                    }
-                }
-                .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        Text("Second")
-                    }
-                }
-                .tag(1)
+    
+    @ObservedObject var PokeListVM = PokeListViewModel()
+    
+    var body: some View
+    {
+        VStack{
+            HStack{
+                //TODO: remove constant
+                SearchBarView(text: .constant(""))
+                CheckBoxView()
+                .padding(10)
+            }
+            ScrollView{
+                
+                ForEach(PokeListVM.pokemons){pokemon in Text(pokemon.name)}
+            }
+            Spacer()
         }
     }
 }

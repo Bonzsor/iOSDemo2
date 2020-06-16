@@ -46,8 +46,8 @@
 		3F329AE12498BC0B00084EE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3F329AE22498BC5700084EE3 /* CheckBoxView.swift */,
 				3F9B67052498B2A90046AB67 /* SearchBarView.swift */,
+				3F329AE22498BC5700084EE3 /* CheckBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

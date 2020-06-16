@@ -9,22 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var PokeListVM = PokeListViewModel()
-    
     var body: some View
     {
         VStack{
+            TypeListView()
+            
             HStack{
+                
+                
                 //TODO: remove constant
                 SearchBarView(text: .constant(""))
                 CheckBoxView()
                 .padding(10)
             }
-            ScrollView{
-                
-                ForEach(PokeListVM.pokemons){pokemon in Text(pokemon.name)}
-            }
+            PokeListView()
             Spacer()
         }
     }

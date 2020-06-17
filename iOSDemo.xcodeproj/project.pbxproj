@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F329AE82498EBBD00084EE3 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AE72498EBBD00084EE3 /* CheckBoxView.swift */; };
 		3F329AEA2498EDE300084EE3 /* PokeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AE92498EDE300084EE3 /* PokeListView.swift */; };
-		3F329AEE2498FA6D00084EE3 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AED2498FA6D00084EE3 /* ListViewModel.swift */; };
 		3F329AF02498FC3400084EE3 /* TypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AEF2498FC3400084EE3 /* TypeListView.swift */; };
-		3F329AF22499130F00084EE3 /* PokeTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AF12499130F00084EE3 /* PokeTypeViewModel.swift */; };
+		3F329AF4249A027D00084EE3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F329AF3249A027D00084EE3 /* ViewModel.swift */; };
 		3F9B66F22498AD280046AB67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B66F12498AD280046AB67 /* AppDelegate.swift */; };
 		3F9B66F42498AD280046AB67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B66F32498AD280046AB67 /* SceneDelegate.swift */; };
 		3F9B66F62498AD280046AB67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B66F52498AD280046AB67 /* ContentView.swift */; };
@@ -24,9 +23,8 @@
 /* Begin PBXFileReference section */
 		3F329AE72498EBBD00084EE3 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		3F329AE92498EDE300084EE3 /* PokeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeListView.swift; sourceTree = "<group>"; };
-		3F329AED2498FA6D00084EE3 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		3F329AEF2498FC3400084EE3 /* TypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeListView.swift; sourceTree = "<group>"; };
-		3F329AF12499130F00084EE3 /* PokeTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeTypeViewModel.swift; sourceTree = "<group>"; };
+		3F329AF3249A027D00084EE3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3F9B66EE2498AD280046AB67 /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9B66F12498AD280046AB67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F9B66F32498AD280046AB67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,15 +58,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3F329AE42498E90200084EE3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3F329AED2498FA6D00084EE3 /* ListViewModel.swift */,
-				3F329AF12499130F00084EE3 /* PokeTypeViewModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		3F9B66E52498AD280046AB67 = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +77,11 @@
 		3F9B66F02498AD280046AB67 /* iOSDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3F329AE42498E90200084EE3 /* Models */,
 				3F329AE12498BC0B00084EE3 /* Views */,
 				3F9B66F12498AD280046AB67 /* AppDelegate.swift */,
 				3F9B66F32498AD280046AB67 /* SceneDelegate.swift */,
 				3F9B66F52498AD280046AB67 /* ContentView.swift */,
+				3F329AF3249A027D00084EE3 /* ViewModel.swift */,
 				3F9B66F72498AD4A0046AB67 /* Assets.xcassets */,
 				3F9B66FC2498AD4A0046AB67 /* LaunchScreen.storyboard */,
 				3F9B66FF2498AD4A0046AB67 /* Info.plist */,
@@ -180,12 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F329AF4249A027D00084EE3 /* ViewModel.swift in Sources */,
 				3F329AE82498EBBD00084EE3 /* CheckBoxView.swift in Sources */,
 				3F9B66F22498AD280046AB67 /* AppDelegate.swift in Sources */,
 				3F329AEA2498EDE300084EE3 /* PokeListView.swift in Sources */,
 				3F9B67062498B2A90046AB67 /* SearchBarView.swift in Sources */,
-				3F329AF22499130F00084EE3 /* PokeTypeViewModel.swift in Sources */,
-				3F329AEE2498FA6D00084EE3 /* ListViewModel.swift in Sources */,
 				3F9B66F42498AD280046AB67 /* SceneDelegate.swift in Sources */,
 				3F329AF02498FC3400084EE3 /* TypeListView.swift in Sources */,
 				3F9B66F62498AD280046AB67 /* ContentView.swift in Sources */,

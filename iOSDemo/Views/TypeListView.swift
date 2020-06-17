@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TypeListView: View {
     
-    @ObservedObject var TypeListVM = ListViewModel(apiUrl: "https://pokeapi.co/api/v2/type/")
+    @ObservedObject var someVM: ViewModel
     
     @State private var selectedType = 0
     
@@ -20,15 +20,17 @@ struct TypeListView: View {
         VStack{
             NavigationView {
                         Picker(selection: $selectedType, label: Text("Type")) {
-                            ForEach(TypeListVM.elements){element in Text(element.name)}
+                            ForEach(someVM.typeElements, id: \.self.id){element in Text(element.name)}
             
-                }.navigationBarTitle("Select your type")
+                        }.navigationBarTitle("Select your type")
             }
             Button(action:{
-                //TODO
+                self.someVM.fetchPokemons(selectedType: self.selectedType)
+                self.someVM.start = false
             }){
                 Text("Choose")
             }
+            Spacer()
         }
         
         
@@ -38,6 +40,6 @@ struct TypeListView: View {
 
 struct TypeListView_Previews: PreviewProvider {
     static var previews: some View {
-        TypeListView()
+        TypeListView(someVM: ViewModel())
     }
 }

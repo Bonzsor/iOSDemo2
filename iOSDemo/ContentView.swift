@@ -7,24 +7,31 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    @ObservedObject var someVM = ViewModel()
+    
     var body: some View
     {
         VStack{
-            TypeListView()
-            
-            HStack{
-                
-                
-                //TODO: remove constant
-                SearchBarView(text: .constant(""))
-                CheckBoxView()
-                .padding(10)
+            if(someVM.start){
+                TypeListView(someVM: someVM)
+                Spacer()
+            }else{
+                HStack{
+                    
+                    
+                    SearchBarView(someVM: someVM)
+                    CheckBoxView()
+                    .padding(10)
+                }
+                PokeListView(someVM: someVM)
             }
-            PokeListView()
-            Spacer()
+            
         }
+        
+        
     }
 }
 

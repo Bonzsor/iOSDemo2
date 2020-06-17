@@ -9,18 +9,30 @@
 import SwiftUI
 
 struct PokeListView: View {
-    @ObservedObject var PokeListVM = ListViewModel(apiUrl: "")
+    @ObservedObject var someVM: ViewModel
+    
+    @State var selector = 0
     
     var body: some View {
-        ScrollView{
+        NavigationView {
+            List(someVM.filteredList()){ element in NavigationLink(destination: VStack{
+                Text(element.name)
+                }
             
-            ForEach(PokeListVM.elements){element in Text(element.name)}
+            
+            
+            
+            ){
+                Text(element.name)
+                }
+            }
+            
         }
     }
 }
 
 struct PokeListView_Previews: PreviewProvider {
     static var previews: some View {
-        PokeListView()
+        PokeListView(someVM: ViewModel())
     }
 }

@@ -9,11 +9,10 @@
 import SwiftUI
  
 struct SearchBarView: View {
-    @Binding var text: String
- 
+    @ObservedObject var someVM: ViewModel
  
     var body: some View {
-        TextField("Search Pokemon", text: $text)
+        TextField("Search Pokemon", text: $someVM.searchText)
             .padding(7)
             .padding(.horizontal, 25)
             .background(Color(.systemGray6))
@@ -25,6 +24,6 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(text: .constant(""))
+        SearchBarView(someVM: ViewModel())
     }
 }

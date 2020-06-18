@@ -20,18 +20,14 @@ struct ContentView: View {
                 Spacer()
             }else{
                 HStack{
-                    
-                    
                     SearchBarView(someVM: someVM)
-                    CheckBoxView()
+                    CheckBoxView(someVM: someVM)
                     .padding(10)
                 }
                 PokeListView(someVM: someVM)
             }
             
         }
-        
-        
     }
 }
 

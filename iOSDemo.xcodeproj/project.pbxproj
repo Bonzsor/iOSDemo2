@@ -18,6 +18,8 @@
 		3F9B66FB2498AD4A0046AB67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B66FA2498AD4A0046AB67 /* Preview Assets.xcassets */; };
 		3F9B66FE2498AD4A0046AB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B66FC2498AD4A0046AB67 /* LaunchScreen.storyboard */; };
 		3F9B67062498B2A90046AB67 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B67052498B2A90046AB67 /* SearchBarView.swift */; };
+		3FC1BD8D249B7634009E7EE9 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */; };
+		3FC1BD8F249B77A8009E7EE9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3F9B66FD2498AD4A0046AB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F9B66FF2498AD4A0046AB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9B67052498B2A90046AB67 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		3F329AE12498BC0B00084EE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */,
 				3F9B67052498B2A90046AB67 /* SearchBarView.swift */,
 				3F329AE72498EBBD00084EE3 /* CheckBoxView.swift */,
 				3F329AE92498EDE300084EE3 /* PokeListView.swift */,
@@ -77,6 +82,7 @@
 		3F9B66F02498AD280046AB67 /* iOSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */,
 				3F329AE12498BC0B00084EE3 /* Views */,
 				3F9B66F12498AD280046AB67 /* AppDelegate.swift */,
 				3F9B66F32498AD280046AB67 /* SceneDelegate.swift */,
@@ -174,8 +180,10 @@
 				3F9B66F22498AD280046AB67 /* AppDelegate.swift in Sources */,
 				3F329AEA2498EDE300084EE3 /* PokeListView.swift in Sources */,
 				3F9B67062498B2A90046AB67 /* SearchBarView.swift in Sources */,
+				3FC1BD8D249B7634009E7EE9 /* InfoViewModel.swift in Sources */,
 				3F9B66F42498AD280046AB67 /* SceneDelegate.swift in Sources */,
 				3F329AF02498FC3400084EE3 /* TypeListView.swift in Sources */,
+				3FC1BD8F249B77A8009E7EE9 /* InfoView.swift in Sources */,
 				3F9B66F62498AD280046AB67 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

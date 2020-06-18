@@ -11,41 +11,18 @@ import SwiftUI
 struct PokeListView: View {
     @ObservedObject var someVM: ViewModel
     
+    @State var refreshList = false
+    
     var body: some View {
         NavigationView {
-            List(someVM.filteredList()){ element in NavigationLink(destination: VStack{
-                    Image(uiImage: UIImage(data: self.someVM.getImage(pokeUrl: element.url)) ?? UIImage())
+            List(someVM.filteredList()){ element in NavigationLink(destination: InfoView(infoVM: element.infoVM, refreshList: self.$refreshList)
+                ){
                     HStack{
-                        Text("Name: ")
-                        Text(element.name)
-                    }
-                    HStack{
-                        Text("Height: ")
-                        Text(String(self.someVM.pData.height))
-                    }
-                    HStack{
-                        Text("Weight: ")
-                        Text(String(self.someVM.pData.weight))
-                    }
-                    HStack{
-                        Text("Abilities: ")
-                    }
-                    Button(action:{
-                        //element.isCatched.toggle()
-                    }){
-                        if(element.isCatched){
-                            Text("Release")
-                        }else{
-                            Text("Catch")
-                        }
-                    }
-                
+                        Text(element.name).foregroundColor((element.infoVM.isCatched ? .green : .black))
+                    }.accentColor(self.refreshList ? .white : .white)
+                    
                 }
-            ){
-                Text(element.name)
             }
-            }
-            
         }
     }
 }

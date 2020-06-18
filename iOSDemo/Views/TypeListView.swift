@@ -12,28 +12,30 @@ struct TypeListView: View {
     
     @ObservedObject var someVM: ViewModel
     
-    @State private var selectedType = 0
+    @State private var selectedType = "normal"
     
     
     
     var body: some View {
         VStack{
             NavigationView {
-                        Picker(selection: $selectedType, label: Text("Type")) {
-                            ForEach(someVM.typeElements, id: \.self.id){element in Text(element.name)}
-            
-                        }.navigationBarTitle("Select your type")
+                Picker(selection: $selectedType, label: Text("Type")) {
+                    ForEach(someVM.chooseableTypes, id: \.self){element in
+                        HStack{
+                            Text(element)
+                        }
+    
+                    }
+                }.id(self.someVM.chooseableTypes).navigationBarTitle("Select your type").padding(20)
             }
             Button(action:{
                 self.someVM.fetchPokemons(selectedType: self.selectedType)
-                self.someVM.start = false
             }){
                 Text("Choose")
             }
-            Spacer()
+            
+        
         }
-        
-        
     }
 }
 

@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct CheckBoxView: View {
-    @State var isChecked :Bool = false
+    @ObservedObject var someVM: ViewModel
+    
     var body: some View {
         Button(action:{
-            self.isChecked.toggle()
+            self.someVM.isFiltered.toggle()
         }) {
-            Image(systemName: isChecked ? "checkmark.square": "square")
+            Image(systemName: self.someVM.isFiltered ? "checkmark.square": "square")
             .padding(5)
         }
     }
@@ -21,6 +22,6 @@ struct CheckBoxView: View {
 
 struct CheckBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckBoxView()
+        CheckBoxView(someVM: ViewModel())
     }
 }

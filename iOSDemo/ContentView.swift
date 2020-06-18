@@ -9,30 +9,29 @@
 import SwiftUI
 import Combine
 
+
+
 struct ContentView: View {
     @ObservedObject var someVM = ViewModel()
     
     var body: some View
     {
+        LoadingView(isShowing: self.$someVM.loading) {
         VStack{
-            if(someVM.start){
-                TypeListView(someVM: someVM)
+            if(self.someVM.start){
+                TypeListView(someVM: self.someVM)
                 Spacer()
             }else{
                 HStack{
-                    SearchBarView(someVM: someVM)
-                    CheckBoxView(someVM: someVM)
+                    SearchBarView(someVM: self.someVM)
+                    CheckBoxView(someVM: self.someVM)
                     .padding(10)
                 }
-                PokeListView(someVM: someVM)
+                PokeListView(someVM: self.someVM)
+            }
+            
             }
             
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

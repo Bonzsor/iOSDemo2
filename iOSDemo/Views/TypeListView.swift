@@ -13,6 +13,7 @@ struct TypeListView: View {
     @ObservedObject var someVM: ViewModel
     
     @State private var selectedType = "normal"
+
     
     
     
@@ -29,7 +30,9 @@ struct TypeListView: View {
                 }.id(self.someVM.chooseableTypes).navigationBarTitle("Select your type").padding(20)
             }
             Button(action:{
+ 
                 self.someVM.fetchPokemons(selectedType: self.selectedType)
+
             }){
                 Text("Choose")
             }

@@ -20,6 +20,7 @@
 		3F9B67062498B2A90046AB67 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B67052498B2A90046AB67 /* SearchBarView.swift */; };
 		3FC1BD8D249B7634009E7EE9 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */; };
 		3FC1BD8F249B77A8009E7EE9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */; };
+		3FC1BD91249BA699009E7EE9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BD90249BA699009E7EE9 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3F9B67052498B2A90046AB67 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		3FC1BD90249BA699009E7EE9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		3F329AE12498BC0B00084EE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3FC1BD90249BA699009E7EE9 /* LoadingView.swift */,
 				3FC1BD8E249B77A8009E7EE9 /* InfoView.swift */,
 				3F9B67052498B2A90046AB67 /* SearchBarView.swift */,
 				3F329AE72498EBBD00084EE3 /* CheckBoxView.swift */,
@@ -178,6 +181,7 @@
 				3F329AF4249A027D00084EE3 /* ViewModel.swift in Sources */,
 				3F329AE82498EBBD00084EE3 /* CheckBoxView.swift in Sources */,
 				3F9B66F22498AD280046AB67 /* AppDelegate.swift in Sources */,
+				3FC1BD91249BA699009E7EE9 /* LoadingView.swift in Sources */,
 				3F329AEA2498EDE300084EE3 /* PokeListView.swift in Sources */,
 				3F9B67062498B2A90046AB67 /* SearchBarView.swift in Sources */,
 				3FC1BD8D249B7634009E7EE9 /* InfoViewModel.swift in Sources */,

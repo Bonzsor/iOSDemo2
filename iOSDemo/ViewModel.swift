@@ -55,6 +55,12 @@ class ViewModel: ObservableObject {
         }
     }
     
+    var loading: Bool = false {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     var typeElements = [TypeElement]()
     var chooseableTypes = [String]()
     
@@ -92,33 +98,44 @@ class ViewModel: ObservableObject {
     
     func fetchPokemons(selectedType: String) {
         
+        self.loading = true
         
-        var tmpUrl = ""
-        for element in typeElements {
-            if element.name == selectedType {
-                tmpUrl = element.url
-                break
-            }
-        }
-        if tmpUrl == "" {
-            return
-        }else{
-            // fetch json and decode and update some array property
-            guard let url = URL(string: tmpUrl) else {return}
-            if let data = try? Data(contentsOf: url) {
-                if let jsonElements = try? JSONDecoder().decode(PokeElements0.self, from: data){
-                    let tmpPoke = jsonElements.pokemon
-                    for pokeElements1 in tmpPoke {
-                        pokeElements.append(pokeElements1.pokemon)
-                    }
+        let dispatchQueue = DispatchQueue(label: "QueueIdentification", qos: .background)
+        dispatchQueue.async{
+            var tmpUrl = ""
+                for element in self.typeElements {
+                if element.name == selectedType {
+                    tmpUrl = element.url
+                    break
                 }
             }
-            //TODO: eliminate double for
-            for pokemon in pokeElements {
-                catchElements.append(CatchableElement(name: pokemon.name, infoVM: InfoViewModel(pokeUrl: pokemon.url)))
+            if tmpUrl == "" {
+                self.loading = false
+                return
+            }else{
+                // fetch json and decode and update some array property
+                guard let url = URL(string: tmpUrl) else {return}
+                if let data = try? Data(contentsOf: url) {
+                    if let jsonElements = try? JSONDecoder().decode(PokeElements0.self, from: data){
+                        let tmpPoke = jsonElements.pokemon
+                        for pokeElements1 in tmpPoke {
+                            self.pokeElements.append(pokeElements1.pokemon)
+                        }
+                    }
+                }
+                //TODO: eliminate double for
+                for pokemon in self.pokeElements {
+                    self.catchElements.append(CatchableElement(name: pokemon.name, infoVM: InfoViewModel(pokeUrl: pokemon.url)))
+                }
             }
+            
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.loading = false
             self.start = false
         }
+        
+        
         
     }
     

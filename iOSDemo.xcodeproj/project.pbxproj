@@ -85,12 +85,11 @@
 		3F9B66F02498AD280046AB67 /* iOSDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */,
+				3FC1BD92249BAEB1009E7EE9 /* ViewModels */,
 				3F329AE12498BC0B00084EE3 /* Views */,
 				3F9B66F12498AD280046AB67 /* AppDelegate.swift */,
 				3F9B66F32498AD280046AB67 /* SceneDelegate.swift */,
 				3F9B66F52498AD280046AB67 /* ContentView.swift */,
-				3F329AF3249A027D00084EE3 /* ViewModel.swift */,
 				3F9B66F72498AD4A0046AB67 /* Assets.xcassets */,
 				3F9B66FC2498AD4A0046AB67 /* LaunchScreen.storyboard */,
 				3F9B66FF2498AD4A0046AB67 /* Info.plist */,
@@ -105,6 +104,15 @@
 				3F9B66FA2498AD4A0046AB67 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3FC1BD92249BAEB1009E7EE9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3FC1BD8C249B7634009E7EE9 /* InfoViewModel.swift */,
+				3F329AF3249A027D00084EE3 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

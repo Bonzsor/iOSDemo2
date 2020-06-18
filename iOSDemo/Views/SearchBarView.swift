@@ -9,9 +9,13 @@
 import SwiftUI
  
 struct SearchBarView: View {
+    //Reactive searchbar
+    
+    //ViewModel for Type and Pokemon handling
     @ObservedObject var someVM: ViewModel
  
-    var body: some View {
+    var body: some View
+    {
         TextField("Search Pokemon", text: $someVM.searchText)
             .padding(7)
             .padding(.horizontal, 25)

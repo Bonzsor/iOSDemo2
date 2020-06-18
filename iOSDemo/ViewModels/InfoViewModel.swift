@@ -55,8 +55,13 @@ class InfoViewModel: ObservableObject{
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     
+    //Loaded Image value
     var imData = Data()
+    
+    //Pokemon infos
     var pData =  PokemonData(abilities: [], height: 0,weight: 0, name: "none")
+    
+    //Catched state value
     var isCatched: Bool = false {
         willSet {
             objectWillChange.send()
@@ -64,6 +69,8 @@ class InfoViewModel: ObservableObject{
     }
     
     init(pokeUrl: String){
+        // fetch Pokemon Information API json and decode and update some array property
+        
         var imageUrl = ""
         
         guard let url = URL(string: pokeUrl) else {return}
@@ -80,6 +87,7 @@ class InfoViewModel: ObservableObject{
             }
         }
         
+        //fetching the pokemon image
         guard let iUrl = URL(string: imageUrl) else {return}
         let task = URLSession.shared.dataTask(with: iUrl) { data, response, error in
             guard let data = data else { return }
@@ -89,6 +97,4 @@ class InfoViewModel: ObservableObject{
         }
         task.resume()
     }
-    
-    
 }

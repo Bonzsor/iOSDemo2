@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct CheckBoxView: View {
+    //Filter state changing UI
+    
+    //ViewModel for the pokemon informations
     @ObservedObject var someVM: ViewModel
     
-    var body: some View {
+    var body: some View
+    {
         Button(action:{
             self.someVM.isFiltered.toggle()
         }) {
@@ -19,6 +23,7 @@ struct CheckBoxView: View {
         }
     }
 }
+
 
 struct CheckBoxView_Previews: PreviewProvider {
     static var previews: some View {

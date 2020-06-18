@@ -23,7 +23,9 @@ struct ActivityIndicator: UIViewRepresentable {
 }
 
 struct LoadingView<Content>: View where Content: View {
+    //A loading UI
 
+    //Binding variable for the overlay activization
     @Binding var isShowing: Bool
     var content: () -> Content
 

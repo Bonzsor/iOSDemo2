@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct InfoView: View {
+    //List one pokemon infos and a catch button
     
     @ObservedObject var infoVM: InfoViewModel
     @Binding var refreshList: Bool
     
-    var body: some View {
+    var body: some View
+    {
         VStack{
             Image(uiImage: UIImage(data: self.infoVM.imData) ?? UIImage())
             HStack{
@@ -49,6 +51,7 @@ struct InfoView: View {
         }
     }
 }
+
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
